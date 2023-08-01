@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Budgeting Website</title>
+</head>
+
+<body>
+    <div class="top-row">
+        <div class="main-container">
+            <div class="option-buttons">
+                <button id="preset-btn" class="active">Preset</button>
+                <button id="personalize-btn">Personalize</button>
+            </div>
+            <div class="preset-container">
+                <div class="input-container">
+                    <label for="salary-preset">Monthly Salary:</label>
+                    <input type="number" id="salary-preset" name="salary" placeholder="Enter your monthly salary">
+                </div>
+                <div class="input-container">
+                    <label for="utilities">Utilities (%):</label>
+                    <input type="number" id="utilities" name="utilities" placeholder="Enter percentage for utilities">
+                </div>
+                <div class="input-container">
+                    <label for="savings">Savings (%):</label>
+                    <input type="number" id="savings" name="savings" placeholder="Enter percentage for savings">
+                </div>
+                <div class="input-container">
+                    <label for="personal-needs">Personal Needs (%):</label>
+                    <input type="number" id="personal-needs" name="personal-needs" placeholder="Enter percentage for personal needs">
+                </div>
+                <button type="button" id="add-funds-btn-preset">Add Funds</button>
+            </div>
+            <div class="personalize-container" style="display: none;">
+                <div class="input-container">
+                    <label for="salary-personalize">Monthly Salary:</label>
+                    <input type="number" id="salary-personalize" name="salary" placeholder="Enter your monthly salary">
+                </div>
+                <button type="button" id="add-funds-btn-personalize">Add Funds</button>
+                <button type="button" id="add-category-btn">Add Category</button>
+                <button type="button" id="clear-category-btn">Clear Categories</button>
+                <div class="category-container"></div>
+            </div>
+            <button type="button" id="budget-button">Budget!</button>
+        </div>
+        <div class="right-container">
+            <div class="title-text">
+                <h1>Your Budget Chart</h1>
+            </div>
+            <canvas id="pieChart" width="300" height="300"></canvas>
+        </div>
+    </div>
+    <div class="bottom-container">
+        <div class="bottom-left">
+            <h1>Record your spendings</h1>
+            <div class="spending-form">
+                <input type="date" id="spending-date" placeholder="Date">
+                <input type="text" id="spending-reason" placeholder="Reason">
+                <input type="number" id="spending-amount" placeholder="Amount">
+                <select id="spending-category">
+                    <optgroup label="Preset">
+                    </optgroup>
+                    <optgroup label="Personalize">
+                    </optgroup>
+                </select>
+                <button id="record-spending-btn">Record</button>
+                <button id="clear-spending-btn">Clear</button>
+            </div>
+            <div id="recorded-entries"></div>
+        </div>
+    </div>    
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
