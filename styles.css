@@ -383,8 +383,9 @@ body {
   .main-container,
   .right-container,
   .bottom-left {
-    padding: 10px; 
-    margin: 10px;  
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
   }
 
   .right-container,
@@ -392,14 +393,32 @@ body {
     width: calc(100% - 20px);
   }
 
+  .bottom-left {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
   .spending-form {
     flex-direction: column;
   }
 
-  input[type="number"],
-  input[type="text"],
-  input[type="date"],
-  select {
-    width: 100%; 
+  .spending-form input[type="number"],
+  .spending-form input[type="text"],
+  .spending-form input[type="date"],
+  .spending-form select {
+    width: 100%;
+    margin: 5px 0;
+    box-sizing: border-box;
+  }
+  .spending-form button {
+    margin: 5px; 
+  }
+
+  .input-container {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    box-sizing: border-box;
   }
 }
+  
